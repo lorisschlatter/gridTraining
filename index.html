@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+            background-color: rgb(255, 255, 255);
+        }
+
+        p {
+            color: white;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        h1 {
+            font-size: 50px;
+            letter-spacing: 5px;
+            margin-top: 100px;
+            text-align: center;
+        }
+
+        .all {
+            display: flex;
+            justify-content: center;
+        }
+
+        /* CONTENEUR TEXTE */
+
+        .luidjiV,.luidji,.luidjiVisage,.jorja,.jorjaV,.mairo,.mairoV,.disiz,.disizV,.disizPoisson,.kendrick,.kendrickV,.eight,.don,.tuerie,.blond {
+            position: relative;
+        }
+
+        .subText{
+            position: absolute;
+            left: 5px;
+            top: 0%;
+            width: 90%;
+            height: 100%;
+            margin: 0;
+            opacity: 0;
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            align-items: center;
+            color: white;
+            font-size: 20px;
+        }
+
+        .subText:hover {
+            text-align: center;
+            opacity: 1;
+            transition: .3s ease;
+        }
+
+        .gridRow img{
+            filter: blur(0px);
+            transition: filter 0.3s ease-in;
+            object-fit: cover;
+            position: relative;
+            z-index: -1;
+            width: 100%;
+            height: 100%;
+        }
+
+        .gridRow:hover img{
+            filter: blur(5px);
+        }
+
+        /* CONTENEUR IMAGE */
+
+        .container {
+
+            z-index: -1;
+
+            margin-top: 50px;
+
+            display: grid;
+
+            justify-content: center;
+
+            grid-template-columns: repeat(3, 300px);
+
+            grid-template-rows: repeat(9, 300px);
+
+            grid-template-areas:
+                "luidjiV luidjiV luidji"
+                "luidjiV luidjiV luidjiVisage"
+                "jorja jorja jorjaV"
+                "mairo mairo mairoV"
+                "mairo mairo disizV"
+                "disiz disiz disizPoisson"
+                "kendrick kendrick kendrickV"
+                "kendrick kendrick eight"
+                "blond tuerie don";
+        }
+
+        .container img {
+            width: 100%;
+            height: 100%;
+        }
+
+        /* LUIDJI */
+
+        .luidjiV {
+            grid-area: luidjiV;
+            clip-path: polygon(0 0, 95% 0, 95% 95%, 0% 100%);
+        }
+
+        .luidji {
+            grid-area: luidji;
+        }
+
+        .luidjiVisage {
+            clip-path: polygon(0 10%, 100% 10%, 100% 90%, 0 90%);
+            grid-area: luidjiVisage;
+        }
+
+        /* DISIZ */
+
+        .disiz {
+            grid-area: disiz;
+            clip-path: polygon(0% 10%, 95% 10%, 100% 100%, 0 100%);
+            padding-top: 20px;
+        }
+
+        .disizV {
+            clip-path: polygon(5% 10%, 100% 10%, 100% 100%, 0% 100%);
+            grid-area: disizV;
+            padding-top: 20px;
+        }
+
+        .disizPoisson {
+            clip-path: polygon(0 10%, 100% 10%, 100% 100%, 10% 100%);
+            grid-area: disizPoisson;
+            padding-top: 20px;
+        }
+
+        /* FRANK OCEAN */
+
+        .blond {
+            clip-path: polygon(0 10%, 90% 10%, 90% 100%, 0 100%);
+            grid-area: blond;
+            padding-top: 20px;
+        }
+
+        /* JORJA SMITH */
+
+        .jorja {
+            grid-column: 1 / 3;
+            grid-row: 4 / 3;
+            clip-path: polygon(0 10%, 95% 0, 100% 100%, 0 100%);
+        }
+
+        .jorjaV {
+            clip-path: polygon(0 0%, 100% 0, 100% 100%, 10% 100%);
+            grid-area: jorjaV;
+        }
+
+        /* 808 AND HEARTBREAK */
+        .eight {
+            clip-path: polygon(5% 10%, 100% 10%, 100% 100%, 0% 100%);
+            grid-area: eight;
+        }
+
+        /* MAIRO */
+
+        .mairo {
+            clip-path: polygon(0 5%, 100% 5%, 95% 100%, 0 100%);
+            grid-area: mairo;
+        }
+
+        .mairoV {
+            clip-path: polygon(10% 10%, 100% 10%, 100% 100%, 5% 100%);
+            grid-area: mairoV;
+        }
+
+        /* KENDRICK */
+
+        .kendrick {
+            clip-path: polygon(0 5%, 100% 5%, 95% 100%, 0 100%);
+            grid-area: kendrick;
+        }
+
+        .kendrickV {
+            clip-path: polygon(10% 10%, 100% 10%, 100% 100%, 5% 100%);
+            grid-area: kendrickV;
+            padding-top: 20px;
+        }
+
+        /* TUERIE */
+
+        .tuerie {
+            clip-path: polygon(0 10%, 90% 10%, 90% 100%, 0 100%);
+            grid-area: tuerie;
+        }
+
+        /* DON TOLIVER */
+
+        .don {
+            clip-path: polygon(0 10%, 100% 10%, 100% 100%, 0 100%);
+            grid-area: don;
+        }
+    </style>
+    <title>Document</title>
+</head>
+
+<body>
+
+    <h1>MY FAVORITE ALBUMS</h1>
+
+
+    <!-- <div class="containerText">
+
+            <p class="textLuidji">Luidji - Saison 00 (2023)</p>
+            <p class="vinyleLuidji">Edition limitée vinyle</p>
+            <p class="luidjiTete">Luidji, de son nom complet Luidji Jordan Alexis, né à Villiers-le-Bel, dans le
+                Val-d'Oise, est un rappeur français d’origine haïtienne.</p>
+
+            <p class="jorjaTete">Jorja Smith, née le 11 juin 1997 à Walsall, est une auteure-compositrice-interprète
+                britannique. </p>
+            <p class="fallingOr">Jorja Smith - Falling or Flying (2023)</p>
+
+            <p class="mairoTete">Mairo est le nom de scène d'un rappeur suisse, originaire d'Érythrée et d'Inde, né à
+                Neuchâtel en 1995. Membre de la SuperWak Clique, anciennement connu sous les noms de R-Karah et Romai,
+                il est l'un des principaux représentants francophones de la Detroit.</p>
+            <p class="omar">Mairo - Omar Chappier (2023)</p>
+
+            <p class="amourVinyle">Disiz - L'Amour (2022)</p>
+            <p class="poissonRouge">Disiz - Le poisson Rouge (2000)</p>
+            <p class="disizConcert">Concert de disiz lors de sa tournée pour son disque L'Amour</p>
+
+            <p class="kendrickConcert">Concert de Kendrick Lamar pour sa tournée MR Morale and the Big Steppers</p>
+            <p class="gkmc">Kendrick Lamar - Good Kidd Maad City (2011)</p>
+
+            <p class="kanye">Kanye West - 808s and Heartbreaks (2008)</p>
+
+            <p class="lifeOf">Don Toliver - Life of a Don (2021)</p>
+
+            <p class="bleuG">Tuerie - Bleu Gospel (2021)</p>
+
+            <p class="frank">Frank Ocean - Blond (2016)</p> -->
+
+
+
+    <div class="container">
+
+        <div class="luidjiV gridRow" ><img src="assets/img/LUIDJI1.jpg.webp" alt="">
+            <p class="subText">Luidji - Saison 00 (2023)</p>
+        </div>
+
+        <div class="luidji gridRow" ><img src="assets/img/LUIDJI2.jpg.webp" alt="">
+            <p class="subText">Edition limitée vinyle</p></div>
+
+        <div class="luidjiVisage gridRow" ><img src="assets/img/luudjivisage.png" alt="">
+            <p class="subText">Luidji, de son nom complet Luidji Jordan Alexis, né à Villiers-le-Bel, dans le
+                Val-d'Oise, est un rappeur français d’origine haïtienne.</p></div>
+
+        <div class="disiz gridRow" ><img src="assets/img/disiz.png" alt="">
+            <p class="subText">Concert de disiz lors de sa tournée pour son disque L'Amour</p></div>
+            
+
+        <div class="disizV gridRow" ><img src="assets/img/DISIZ1.png" alt="">
+            <p class="subText">Disiz - L'Amour (2022)</p></div>
+
+        <div class="disizPoisson gridRow" ><img src="assets/img/disizpoisson.png" alt="">
+            <p class="subText">Disiz - Le poisson Rouge (2000)</p></div>
+
+        <div class="blond gridRow" ><img src="assets/img/frank-ocean-blond-compressed-0933daea-f052-40e5-85a4-35e07dac73df__1_.jpg" alt="">
+            <p class="subText">Frank Ocean - Blond (2016)</p></div>
+
+        <div class="jorja gridRow" ><img src="assets/img/jorja.png" alt="">
+            <p class="subText">Jorja Smith, née le 11 juin 1997 à Walsall, est une auteure-compositrice-interprète
+                britannique. </p></div>
+
+        <div class="jorjaV gridRow" ><img src="assets/img/jorjaV.jpg" alt="">
+            <p class="subText">Jorja Smith - Falling or Flying (2023)</p></div>
+
+        <div class="eight gridRow" ><img src="assets/img/808.jpg" alt="">
+            <p class="subText">Kanye West - 808s and Heartbreaks (2008)</p></div>
+
+        <div class="mairo gridRow" ><img src="assets/img/mairo.png" alt="">
+            <p class="subText">Mairo est le nom de scène d'un rappeur suisse, originaire d'Érythrée et d'Inde, né à
+                Neuchâtel en 1995. Membre de la SuperWak Clique, anciennement connu sous les noms de R-Karah et Romai,
+                il est l'un des principaux représentants francophones de la Detroit.</p></div>
+
+        <div class="mairoV gridRow" ><img src="assets/img/omar-chappier.jpg" alt="">
+            <p class="subText">Mairo - Omar Chappier (2023)</p></div>
+
+        <div class="kendrick gridRow"><img src="assets/img/kendrick.png" alt="">
+            <p class="subText">Concert de Kendrick Lamar pour sa tournée MR Morale and the Big Steppers</p></div>
+
+        <div class="kendrickV gridRow"><img src="assets/img/KENDRICK2.jpg" alt="">
+            <p class="subText">Kendrick Lamar - Good Kidd Maad City (2011)</p></div>
+
+        <div class="tuerie gridRow"><img src="assets/img/tuerie.jpg" alt="">
+            <p class="subText">Tuerie - Bleu Gospel (2021)</p></div>
+
+        <div class="don gridRow"><img src="assets/img/dontoliver.jpg" alt="">
+            <p class="subText">Don Toliver - Life of a Don (2021)</p></div>
+
+    </div>
+
+    </div>
+
+    </div>
+</body>
+
+</html>
